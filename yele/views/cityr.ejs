@@ -1,0 +1,29 @@
+<% include partials/header %>
+<div class="container">
+   <header class="jumbotron" style="background-color: darkorchid">
+    <div class="container" >
+      <h1 style="font-size: 60px">Hey welcome to the food post page...</h1>
+      <h4>here are the food providing hotels</h4>
+      <a class="btn btn-primary btn-large " href="/hotel/new">Add food post</a>
+      <a class="btn btn-primary btn-large " href="/hotelRegister">Register hotel</a>
+    </div>
+
+   </header>
+   
+   <div class='row' style="background-color: deepskyblue">
+    <% city.forEach(function(city){ %>
+        <div class="col-md-4 col-sm-6">
+            <div class="thumbnail" style="margin-top: 40px" >
+                <img src="<%= city.image %>"  style="width:350px;height:280px">
+                <div class="caption" style="background-color: white">
+                   <h4 style="font-family:cursive"><%= city.name %></h4>
+                </div>
+            </div>
+        </div>        
+    <% }); %>
+    </div>
+  
+      
+   
+</div>
+<% include partials/footer %>

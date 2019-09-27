@@ -1,0 +1,19 @@
+<% include partials/header %>
+<h1>Register your HOTEL</h1>
+<form action="/hotelRegister" method="post">
+
+    <input type="text" name="username" placeholder="username"><br><br>
+    <input type="text" name="hotelname" placeholder="hotelname"><br><br>
+    <label for="address">
+        Address:<br>
+        <input type="text" name="streetaddress" placeholder="street address">
+        <input type="text" name="city" placeholder="city">
+        <input type="text" name="postalcode" placeholder="postal code">
+        <input type="text" name="state" placeholder="state">
+    </label><br><br>
+    
+    <input type="password" name="password" placeholder="password">
+    <br><br>
+    <button>Submit</button>
+</form>
+<% include partials/footer %>
