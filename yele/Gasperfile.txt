@@ -5,5 +5,11 @@ echo "mongodb-org-server hold" | sudo dpkg --set-selections
 echo "mongodb-org-shell hold" | sudo dpkg --set-selections
 echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
 
-npm install node express body-parser mongoose passport passport-local
+npm install 
+npm install node
+npm install express
+npm install body-parser
+npm install mongoose
+npm install passport 
+npm install passport-local
 node app.js
