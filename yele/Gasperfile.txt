@@ -1,4 +1,9 @@
-npm install
 npm init -y
-npm install node express 
+sudo apt-get install -y mongodb-org
+echo "mongodb-org hold" | sudo dpkg --set-selections
+echo "mongodb-org-server hold" | sudo dpkg --set-selections
+echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+
+npm install node express body-parser mongoose passport passport-local
 node app.js
