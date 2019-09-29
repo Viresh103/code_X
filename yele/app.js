@@ -49,8 +49,7 @@ app.get("/",function(req,res){
 });
 
 //post accept=============================================
-app.post("/accept",function(req,res){
-    console.log("yay");
+app.post("/notification",function(req,res){
     var usernm=req.body.username;
     console.log(usernm);
     database.findOneAndUpdate({"name":usernm},{ $set: { "status":false }},function(err,doc){
@@ -236,11 +235,11 @@ function isLoggedIn(req,res,next){
     res.redirect("/login");
 }
 
-app.post("/notification",function(req,res){
-    var username=req.body.username;
-    // console.log(username);
+// app.post("/notification",function(req,res){
+//     var username=req.body.username;
+//     // console.log(username);
     
-})
+// })
 
 app.listen(localhost=3000,function(){
     console.log('server is running ...');
