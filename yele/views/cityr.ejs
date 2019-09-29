@@ -1,22 +1,91 @@
 <% include partials/header %>
+<div class="">
+<div class="search" >
+            
+    <form action="/ooo" method="POST">
+        <input class="form-control sbar hmm" id="hmm"  type="text" name='see'  placeholder="search">
+    </form>
+    <a class="btn btn-primary btn-large addpost " style="text-align: center; padding-top: 10px; border-radius: 20px" href="/hotel/new">New Post</a>
+  </div>
 <div class="container">
-   <header class="jumbotron" style="background-color: darkorchid">
+
+    <div class="">
+        <div class="accinfo">
+                <img class="aphoto" src="https://mpng.pngfly.com/20180509/klq/kisspng-person-logo-computer-icons-5af2c2026fcf79.460327751525858818458.jpg" alt="">
+                <p class="usernamepp" id="name"><%=username%></p>
+            </div>
+    </div>
+   
+   
+    
+        <% city.forEach(function(city){ %>
+
+            <% if(city.status===true){ %>
+            <div class="post" style="margin-top: 20px;">
+                <div class="d-flex justify-content-around align-items-stretch" style=" padding-top: 20px; padding-bottom: 50px;padding-left: 20px; background: rgba(118, 11, 156, 0);" >
+                    <div class="">
+                            
+                            <img class="pphoto" src="https://mpng.pngfly.com/20180509/klq/kisspng-person-logo-computer-icons-5af2c2026fcf79.460327751525858818458.jpg" alt="">
+                            <h4 style="font-family:cursive; color:rgb(0, 0, 0)"><%= city.name %></h4>
+                            <h4 style="font-family:cursive;color:black;"><%= city.image %></h4>
+                            <!-- <form action="/accept" method="post"> -->
+                            <button id="acc" >accept</button>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+                            
+            <%  };%>
+            <% if(city.status===false){%>
+                <div class="post" style="margin-top: 20px;">
+                    <div class="d-flex justify-content-around align-items-stretch" style=" padding-top: 20px; padding-bottom: 50px;padding-left: 20px; background: rgba(118, 11, 156, 0);" >
+                        <div class="">
+                            <h4 style="font-family:cursive; color:rgb(0, 0, 0)"><%= city.name %></h4>
+                            <h4 style="font-family:cursive;color:black;"><%= city.image %></h4>
+                        </div>
+                    </div>
+                </div>  
+                            
+            <% }; %>
+        
+        <% }); %>
+    
+  
+      
+   
+</div>
+</div>
+<script>
+
+        var n=document.getElementById("name").textContent;
+    	    console.log(n);
+            $("#acc").click(function(){
+                 $.post("/accept",{username:n},function(data,status){
+                    });
+                 }); 
+    </script>
+<% include partials/footer %>
+ 
+<!-- <% include partials/header %>
+<div class="container">
+   <header class="jumbotron" style="background-color: rgb(103, 226, 103)">
     <div class="container" >
       <h1 style="font-size: 60px">Hey welcome to the food post page...</h1>
       <h4>here are the food providing hotels</h4>
       <a class="btn btn-primary btn-large " href="/hotel/new">Add food post</a>
       <a class="btn btn-primary btn-large " href="/hotelRegister">Register hotel</a>
+      <a class="btn btn-primary btn-large " href="/ngoRegister">Register NGO</a>
     </div>
 
    </header>
    
-   <div class='row' style="background-color: deepskyblue">
+   <div class='row' style="background-color: gray">
     <% city.forEach(function(city){ %>
         <div class="col-md-4 col-sm-6">
             <div class="thumbnail" style="margin-top: 40px" >
-                <img src="<%= city.image %>"  style="width:350px;height:280px">
+                <h4 style="font-family:cursive"><%= city.name %></h4>
+                <h4 style="font-family:cursive"><%= city.image %></h4>
                 <div class="caption" style="background-color: white">
-                   <h4 style="font-family:cursive"><%= city.name %></h4>
                 </div>
             </div>
         </div>        
@@ -24,6 +93,5 @@
     </div>
   
       
-   
 </div>
-<% include partials/footer %>
+<% include partials/footer %> -->

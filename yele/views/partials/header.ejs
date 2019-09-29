@@ -1,24 +1,192 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Save Food</title>
-    <link rel=stylesheet href='https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <title>yele camp</title>
+    <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../public/stylesheets/css.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+    </script>  
+    <style>
+        .rectanglenav{
+            background-color: rgb(255, 255, 255);
+            height: 40px;
+            left: 0px;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+            background: #FFFFFF;
+            box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.14);
+/* 
+            background: linear-gradient(91.62deg, #4F008C -0.9%, rgba(148, 9, 233, 0.8) 75.17%, #BD00FF 100.53%); */
+        }
+        .colot{
+            color: rgb(255, 123, 0);
+        }
+        .search{
+            margin-top:70px;
+            height: 100px;
+            left: 123px;
+            top: 140px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.48) 19.79%, #FFA553 100%);
+            /* background: linear-gradient(90deg, rgba(148, 18, 193, 0.49) 0%, rgba(164, 18, 27, 0.48) 100%), rgba(105, 9, 139, 0.29); */
+            /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.48) 19.79%, #BEBEBE 100%); */
+            border-radius: 5px;
+        }
+        .sbar{
+            position: absolute;
+            width: 592px;
+            height: 40px;
+            left: 290px;
+            top: 110px;
+
+            background: #FFFFFF;
+            border-radius: 35px;
+        }
+        .post{
+            width: 992px;
+            /* height: 625px; */
+            left: 123px;
+            top: 335px;
+            /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.48) 19.79%, #BEBEBE 100%); */
+            /* background: linear-gradient(90deg, rgba(148, 18, 193, 0.49) 0%, rgba(164, 18, 27, 0.48) 100%), rgba(105, 9, 139, 0.29); */
+            background: rgba(255, 231, 202, 0.92);
+            border: 1px solid #FF8A00;
+            box-sizing: border-box;
+            border-radius: 15px;
+        }
+        .addpost{
+            position: absolute;
+            width: 150px;
+            height: 40px;
+            left: 900px;
+            top: 110px;
+            border-radius: 5px;
+
+        }
+        .sphoto{
+
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            left: 207px;
+            top: 167px;
+            border-radius: 100%;
+
+        }
+        .pphoto{
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            left: 207px;
+            border-radius: 100%;
+            border: 4px solid #FFFFFF;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+        }
+        .aphoto{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 170px;
+            top: -40px;
+            border-radius: 100%;
+            border: 12px solid #FFFFFF;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+        }
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+        .accinfo{
+        position: absolute;
+        width: 235px;
+        height: 525px;
+        left: 1243px;
+        top: 300px;
+
+        background: linear-gradient(205.92deg, #FFFFFF 5.77%, rgba(255, 255, 255, 0.453125) 21.48%, rgba(255, 184, 0, 0.236664) 55.13%, rgba(255, 109, 3, 0.78) 91.93%), rgba(244, 108, 32, 0.69);
+        border-radius: 24px 24px 24px 0px;
+      }
+      .usernamepp{
+        position: absolute;
+        width: 153px;
+        height: 35px;
+        left: 1183px;
+        top: 236px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 35px;
+
+        color: #009099;
+
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+        
+    </style>
 </head>
 
-<body >
-    <nav class="navbar navbar-default" style="background-color: silver">
-         <div class="container-fluid">
+<body style="background: rgba(248, 248, 248, 0.918)">
+    <nav class="navbar rectanglenav" >
+         <div class="">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">SAVE FOOD</a>
+                <a class="navbar-brand colot" href="/city">food4U</a>
             </div>
             <div class="collapse navbar-collapse ">
-                <ul  class="nav navbar-nav navbar-right">
-                    <li><a href="/login">login</a></li>
-                  
-                    <li><a href="/">sign up</a></li>
-                    <li><a href="/logout">logout</a></li>
+                <ul  class="nav navbar-nav navbar-right colot">
+                    <li><a href="/login" class="colot">login</a></li>
+                    <li><a href="/hotelRegister" class="colot">Hotel register</a></li>
+                    <li><a href="/ngoRegister" class="colot">NGO register</a></li>
+                    <li><a href="/logout" class="colot">logout</a></li>
                 </ul>
             </div>
          </div>
     </nav>
+
 
