@@ -1,0 +1,4 @@
+npm install
+npm init -y
+npm install node express 
+node app.js
