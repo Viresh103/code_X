@@ -1,0 +1,23 @@
+<% include partials/header %>
+  
+   <div style="width:30%;margin: 100px auto;">
+    <h1 style="text-align: center;">Add New Post</h1>
+       <form action="/city" method="POST">
+             <div style="margin-top: 10px;">
+                 <input class="form-control" style="height:40px" type="text" name='name'  placeholder="name">
+             </div>
+             <div style="margin-top: 10px">
+                 <input class="form-control" style="height:40px" type="text" name='image' placeholder="Write Post Here...">
+             </div>
+             <div style="margin-top: 10px">
+                <button class="btn btn-primary btn-large btn-block" style="height:45px;font-size: 20px" >submit</button>
+             </div>
+          
+       </form>
+       <div style="margin-top: 20px">
+          <a href="/city" >back to city page</a>
+       </div>
+   </div>
+ 
+<% include partials/footer %>
+
